@@ -1,0 +1,70 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(270deg, #1d688d, #613ea1);
+    background-size: 200% 200%;
+    animation: Gradient 3s ease infinite;
+}
+  
+@keyframes Gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 75% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+
+.calculator-grid {
+    display: grid;
+    margin-top: 5rem;
+    justify-content: center;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+  }
+
+.calculator-grid > button {
+    transition: background-color 0.3s ease;
+}
+  
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+    box-shadow: inset 0 0 10px #000000;
+}
+  
+  
+.span-two {
+    grid-column: span 2;
+}
+
+.output{
+    grid-column: 1/-1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand{
+    color: rgba(255, 225, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color: white;
+    font-size: 2.5rem;
+}
